@@ -1,0 +1,168 @@
+<div class="container">
+  <h2 class="back"> &#60; &nbsp;Back </h2>
+  <h1 class="heading">ADD PRODUCTS FORM</h1>
+
+
+
+  <div class="row product">
+    <div class="col-sm-5 pr">
+      PRODUCT NAME
+
+      <div class="form-group">
+        <input type="name" class=" name" placeholder="Enter Product Name">
+      </div>
+    </div>
+    <div class="col-sm-7 pr">
+      PRODUCT TYPE
+      <div class="dropdown ">
+        <select class="dropd" name="cars" id="cars">
+          <option value="volvo ">COMBO</option>
+          <option value="saab ">COMBO1</option>
+          <option value="opel">COMBO2</option>
+          <option value="audi">COMBO3</option>
+        </select>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-sm">
+        <h3 class="cmb"> Create Combo </h3>
+      </div>
+    </div>
+    <!--  table-condensed table-striped table-bordered -->
+    <form [formGroup]="mejesticform"> 
+    <table style="width:90%" class="table table-responsive ">
+      <thead>
+        <tr>
+          <th class=" tb" scope="col ">NAME</th>
+          <th class="tb" scope="col">SELECT TYPE</th>
+          <th class="tb" scope="col">PRINT NAME</th>
+          <th class="tb" scope="col">CODE TYPE</th>
+          <th class="tb" scope="col">CODE</th>
+          <th class="tb" scope="col">WEEK PRICE</th>
+          <th class="tb" scope="col">WEEKEND PRICE</th>
+          <th class="tb" scope="col"></th>
+        </tr>
+      </thead>
+    
+      <tr style="border: 1px solid white;">
+        
+        <td> <input type="name" class="comboname"formControlName="name"[(ngModel)]="mejy.name" placeholder="Name"></td>
+        <td> <select class="com"formControlName="selecttype"[(ngModel)]="mejy.selecttype">
+            <input style="color: silver;" value="one" selected  hidden>Combo type
+            <option value="one">One</option>
+            <option value="two">Two</option>
+            <option value="three">Three</option>
+            <option value="four">Four</option>
+            <option value="five">Five</option>
+          </select></td>
+        <td> <input type="name" class="comboname"formControlName="printname"[(ngModel)]="mejy.printname" placeholder="Print name"></td>
+       
+            
+            <td > <select class="com"[(ngModel)]="mejy.codetype" formControlName="codetype" >Code type
+              <!-- <input style="color: silver;" selected hidden >Code type  -->
+              <option  style="color: silver;" [ngValue]="null" selected hidden >Code type</option>
+            <option value="A">   A</option>
+            <option value="B">   B</option>
+            <option value="C">   C</option>
+
+         </select>   </td>
+
+       
+            
+        <td> <input type="number" class="comboname"formControlName="code"[(ngModel)]="mejy.code"placeholder="Code"></td>
+        <td> <input type="number" class="weekprice"formControlName="weekprice"[(ngModel)]="mejy.weekprice" placeholder="&#x20b9;Week price"></td>
+        <td> <input type="number" class="weekendprice"formControlName="weekendprice"[(ngModel)]="mejy.weekendprice"  placeholder="&#x20b9;Weekend price"></td>
+        <th><button (click)="add()" *ngIf="!isEdit"style="background: white;padding:8px;width: 100%;">+ <br> Row</button> </th>
+        <th><button (click)="updateuser()"*ngIf="isEdit" style="background: white;padding:8px;width: 100%;">+ <br> update</button> </th>
+      </tr>
+  
+
+
+    </table>
+       <!--- on selected rendering this hardcoded  -->
+       <div *ngFor="let mydata of alluser"> 
+        <!-- <input   type="text" [(ngModel)]="mydata.name" /> -->
+    <td> <input type="text" class="comboname" placeholder="Name"value="{{mydata.name}}"></td>
+    <td> <select class="com">
+        <option style="color: silver;" value="" selected disabled hidden>{{mydata.selecttype}}&nbsp;&nbsp;&nbsp;&nbsp;</option>
+        <option value="One">One</option>
+        <option value="Two">Two</option>
+        <option value="Three">Three</option>
+        <option value="Four">Four</option>
+        <option value="Five">Five</option>
+      </select></td>
+    <td> <input type="name" class="comboname" placeholder="Print name"value="{{mydata.printname}}"></td>
+    <td> <select class="com">
+        <option style="color: silver;"selected disabled hidden>{{mydata.codetype}}&nbsp;&nbsp;&nbsp;&nbsp;</option>
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+      </select></td>
+  
+    <td> <input type="number" class="comboname" placeholder="Code"value="{{mydata.code}}"></td>
+    <td> <input type="number" class="weekprice"value="{{mydata.weekprice}}" placeholder="&#x20b9;Week price"></td>
+    <td> <input type="number" class="weekendprice" placeholder="&#x20b9;Weekend price"value="{{mydata.weekendprice}}"></td>
+    <td><i (click)="edituser(mydata)"style="color: white;" class="fas fa-edit"></i></td>
+      <td><i (click)="deleteuser(mydata)" style="color: white;" class="fas fa-trash"></i></td>
+      </div>
+    <!-- <div>
+      <td><i style="color: white;" class="fas fa-edit"></i></td>
+      <td><i style="color: white;" class="fas fa-trash"></i></td>
+    </div> -->
+  </form>
+
+ 
+
+
+    <div>
+      <input type="checkbox" id="scales" name="scales"> &nbsp;
+      <label style="color: white;font-size: 14px;">Allow To be Sold On Web</label>
+    </div>
+
+    <div>
+      <input type="checkbox" id="scales" name="scales"> &nbsp;
+      <label style="color: white;font-size: 14px;">Allow To be Sold Offline</label>
+    </div>
+
+
+
+    <div class="row product">
+      <div class="col-sm-3 pr">
+        START DATE
+        <div class="form-group">
+
+          <!-- <input type="date" class="dropd" placeholder="select Start date"> -->
+          <input type="text" class="date" placeholder="select Start date" onfocus="(this.type='date')">
+
+        </div>
+      </div>
+      <div class="col-sm-3 pr">
+        EXPIRY DATE
+
+        <div class="form-group">
+          <input type="text" class="date" placeholder="select Expiry date" onfocus="(this.type='date')">
+        </div>
+      </div>
+
+
+    </div>
+
+    <h3 class="outlet"> Select Outlet</h3>
+
+    <div class="card" style="margin-top: 25px;background-color: black;width: 300px;height: 130px;">
+      <p style="color: silver;margin-top:10px;">Select Outlet</p>
+      <div>
+        <input type="checkbox" id="scales" name="scales"> &nbsp;
+        <label style="color: white;font-size: 14px;">MAJESTIC PRIDE</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="scales" name="scales"> &nbsp;
+        <label style="color: white;font-size: 14px;">NEO MAJESTIC</label>
+      </div>
+
+    </div>
+
+   

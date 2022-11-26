@@ -1,0 +1,94 @@
+.back{
+    color: white;
+    font-size: 18px;
+    margin-top: 5px;
+}
+.heading{
+    color: white;
+    font-size: 24px;
+    margin-top: 25px;
+}
+.product{
+    margin-top: 35px;
+}
+.pr{
+    color: silver;
+    font-size: 13px;
+}
+.name{
+    width: 50%;
+    background-color: black;
+    border: black;
+    margin-top: 7px;
+    color: silver;
+    height: 35px;
+}
+.dropd{
+    background-color: black; 
+    border: black;
+    margin-top: 7px;
+    width: 50%;
+    height: 35px;
+    border: none;
+    color: silver;
+}
+.cmb{
+    color: white;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.tb{
+    color: silver;
+    font-size: 12px;
+}
+td{
+    padding: 8px;
+}
+/* .row{
+    background-color: aliceblue;
+} */
+.comboname{
+    background-color: black;
+    border: black;
+    width: 70%;
+    color: silver;
+}
+.com{
+    background-color: black; 
+    border: black;
+    /* margin-top: 7px; */
+    /* height: 35px; */
+    width: 95px;
+    border: none;
+    color: silver; 
+}
+.weekprice{
+    background-color: black;
+    border: black;
+    width: 100%;
+    color: silver;
+}
+.weekendprice{
+    background-color: black;
+    border: black;
+    width: 90%;
+    color: silver;
+}
+.outlet{
+    color: silver;
+    font-size: 18px;
+    margin-top: 90px;
+  
+}
+.date{
+    background-color: black; 
+    border: black;
+    margin-top: 7px;
+    width: 80%;
+    height: 35px;
+    border: none;
+    color: silver;
+}
+.opt{
+    width: 70px;
+}
